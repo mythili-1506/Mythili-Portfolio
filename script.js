@@ -27,28 +27,36 @@ window.onscroll = ()=>{
     Navbar.classList.remove('active')
 } 
 
+  document.getElementById("downloadCv").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+    const fileUrl = "Mythili_SoftwareDeveloper.pdf"; // Replace with your file's actual URL
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Mythili_SoftwareDeveloper.pdf"; // The downloaded file's name
+    link.click();
+  });
 
- function sendMail() {
-    var params={
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-    };
+//  function sendMail() {
+//     var params={
+//         name: document.getElementById("name").value,
+//         email: document.getElementById("email").value,
+//         message: document.getElementById("message").value,
+//     };
 
-    const serviceId = "service_bqyfmur";
-    const templateId = "template_qc9dfra";
+//     const serviceId = "service_bqyfmur";
+//     const templateId = "template_qc9dfra";
 
-    emailjs
-        .send(serviceId,templateId,params)
-        .then((res) => {
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("message").value = "";
-            console.log(res);
-            alert("your message send sucessfully");
-        })
-        .catch((err)=> console.log(err));
-}
+//     emailjs
+//         .send(serviceId,templateId,params)
+//         .then((res) => {
+//             document.getElementById("name").value = "";
+//             document.getElementById("email").value = "";
+//             document.getElementById("message").value = "";
+//             console.log(res);
+//             alert("your message send sucessfully");
+//         })
+//         .catch((err)=> console.log(err));
+// }
 
 
 
